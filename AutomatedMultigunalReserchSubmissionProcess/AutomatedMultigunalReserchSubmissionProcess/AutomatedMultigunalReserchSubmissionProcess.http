@@ -1,0 +1,6 @@
+@AutomatedMultigunalReserchSubmissionProcess_HostAddress = http://localhost:5009
+
+GET {{AutomatedMultigunalReserchSubmissionProcess_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
