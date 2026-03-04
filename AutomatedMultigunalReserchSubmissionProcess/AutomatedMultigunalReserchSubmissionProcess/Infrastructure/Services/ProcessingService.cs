@@ -24,7 +24,7 @@ namespace AutomatedMultigunalReserchSubmissionProcess.Infrastructure.Services
             ISummaryAgent summary,
             IRAGAgent rag,
             IHumanFeedbackAgent humanFeedback,
-            ILogger<ProcessingOrchestrator> logger)
+            ILogger<ProcessingService> logger)
         {
             _ingestion = ingestion;
             _preProcess = preProcess;
