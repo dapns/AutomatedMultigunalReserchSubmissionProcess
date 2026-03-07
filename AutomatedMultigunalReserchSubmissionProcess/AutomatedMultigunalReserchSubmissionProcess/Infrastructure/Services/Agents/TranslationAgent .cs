@@ -27,10 +27,10 @@ namespace AutomatedMultigunalReserchSubmissionProcess.Infrastructure.Services.Ag
 
             // Use Semantic Kernel to translate
             var prompt = @"
-Translate the following text from {{$sourceLang}} to English. 
-Return only the translated text.
+                    Translate the following text from {{$sourceLang}} to English. 
+                    Return only the translated text.
 
-Text: {{$text}}";
+                    Text: {{$text}}";
 
             var result = await _kernel.InvokePromptAsync(prompt, new KernelArguments
             {

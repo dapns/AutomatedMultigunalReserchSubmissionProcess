@@ -32,11 +32,11 @@ namespace AutomatedMultigunalReserchSubmissionProcess.Infrastructure.Services.Ag
 
             // Toxicity and illicit content check using a prompt
             var safetyPrompt = @"
-Analyze the following text for toxicity or illicit content. 
-If you find any toxic or illicit content, respond with 'TOXIC' or 'ILLICIT' and explain. 
-Otherwise respond with 'SAFE'.
+                    Analyze the following text for toxicity or illicit content. 
+                    If you find any toxic or illicit content, respond with 'TOXIC' or 'ILLICIT' and explain. 
+                    Otherwise respond with 'SAFE'.
 
-Text: {{$text}}";
+                    Text: {{$text}}";
 
             var safetyResult = await _kernel.InvokePromptAsync(safetyPrompt, new() { ["text"] = fullText });
             var safety = safetyResult.ToString();

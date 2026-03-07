@@ -27,14 +27,14 @@ namespace AutomatedMultigunalReserchSubmissionProcess.Infrastructure.Services.Ag
             var contextText = string.Join("\n---\n", context);
 
             var prompt = @"
-You are a helpful research assistant. Answer the question based on the provided context from research paper submissions. 
-If the answer cannot be found in the context, say 'I cannot find that information in the submissions.'
+                    You are a helpful research assistant. Answer the question based on the provided context from research paper submissions. 
+                    If the answer cannot be found in the context, say 'I cannot find that information in the submissions.'
 
-Context:
-{{$context}}
+                    Context:
+                    {{$context}}
 
-Question: {{$question}}
-Answer:";
+                    Question: {{$question}}
+                    Answer:";
 
             var result = await _kernel.InvokePromptAsync(prompt, new KernelArguments
             {
@@ -53,11 +53,11 @@ Answer:";
             if (submission == null) return Enumerable.Empty<string>();
 
             var text = $@"
-Title: {submission.ExtractedInfo?.Title}
-Authors: {string.Join(", ", submission.ExtractedInfo?.Authors ?? new())}
-Abstract: {submission.ExtractedInfo?.Abstract}
-Keywords: {string.Join(", ", submission.ExtractedInfo?.Keywords ?? new())}
-Full Text: {submission.EnglishTranslation ?? submission.ExtractedText}";
+                        Title: {submission.ExtractedInfo?.Title}
+                        Authors: {string.Join(", ", submission.ExtractedInfo?.Authors ?? new())}
+                        Abstract: {submission.ExtractedInfo?.Abstract}
+                        Keywords: {string.Join(", ", submission.ExtractedInfo?.Keywords ?? new())}
+                        Full Text: {submission.EnglishTranslation ?? submission.ExtractedText}";
             return new[] { text };
         }
     }

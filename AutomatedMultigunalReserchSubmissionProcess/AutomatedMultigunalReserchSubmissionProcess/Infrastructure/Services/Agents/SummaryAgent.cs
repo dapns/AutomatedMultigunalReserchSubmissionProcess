@@ -18,16 +18,16 @@ namespace AutomatedMultigunalReserchSubmissionProcess.Infrastructure.Services.Ag
         public async Task<Summary> GenerateSummaryAsync(Submission submission)
         {
             var prompt = @"
-You are a research assistant. Write a concise summary (max 250 words) of the following research paper submission. 
-Highlight key findings, major validation issues, and missing sections. Use plain language.
+                You are a research assistant. Write a concise summary (max 250 words) of the following research paper submission. 
+                Highlight key findings, major validation issues, and missing sections. Use plain language.
 
-Title: {{$title}}
-Authors: {{$authors}}
-Abstract: {{$abstract}}
-Validation Errors: {{$errors}}
-Toxicity: {{$toxicity}} Illicit: {{$illicit}}
+                Title: {{$title}}
+                Authors: {{$authors}}
+                Abstract: {{$abstract}}
+                Validation Errors: {{$errors}}
+                Toxicity: {{$toxicity}} Illicit: {{$illicit}}
 
-Text: {{$text}}";
+                Text: {{$text}}";
 
             var args = new KernelArguments
             {

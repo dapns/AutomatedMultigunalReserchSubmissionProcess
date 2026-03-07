@@ -21,11 +21,11 @@ namespace AutomatedMultigunalReserchSubmissionProcess.Infrastructure.Services.Ag
             _logger.LogInformation("Extracting structured information");
 
             var prompt = @"
-Extract the following fields from the research paper text below. 
-Return a JSON object with keys: title, authors (array), affiliations (array), abstract, keywords (array), sections (array), references (array), pageCount (number). 
-If a field is missing, use empty string or empty array.
+                Extract the following fields from the research paper text below. 
+                Return a JSON object with keys: title, authors (array), affiliations (array), abstract, keywords (array), sections (array), references (array), pageCount (number). 
+                If a field is missing, use empty string or empty array.
 
-Text: {{$text}}";
+                Text: {{$text}}";
 
             var result = await _kernel.InvokePromptAsync(prompt, new KernelArguments
             {
